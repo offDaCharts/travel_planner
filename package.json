@@ -4,6 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "tsx src/server/server.ts",
+    "dev:web": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
     "typecheck": "tsc --noEmit",
     "weather:examples": "rm -rf .tmp/weather-build && tsc --noEmit false --outDir .tmp/weather-build && node scripts/weatherToolExamples.mjs",
     "lodging:examples": "rm -rf .tmp/lodging-build && tsc --noEmit false --outDir .tmp/lodging-build && node scripts/lodgingToolExamples.mjs",
@@ -13,5 +18,18 @@
     "test:things-to-do": "rm -rf .tmp/things-to-do-build && tsc --noEmit false --outDir .tmp/things-to-do-build && node tests/thingsToDoTool.test.mjs",
     "test": "npm run test:weather && npm run test:lodging && npm run test:things-to-do"
   },
-  "devDependencies": {}
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.7",
+    "typescript": "^5.7.2",
+    "tsx": "^4.19.2",
+    "concurrently": "^9.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2"
+  }
 }

@@ -3,7 +3,7 @@ import {
   MOCK_LODGING_CITIES,
   MOCK_LODGING_PROPERTIES,
   lookupMockLodging,
-} from "../.tmp/lodging-build/lodging/index.js";
+} from "../.tmp/lodging-build/src/tools/lodging/index.js";
 
 test("mock data covers 10 cities with five properties each", () => {
   assert.equal(MOCK_LODGING_CITIES.length, 10);

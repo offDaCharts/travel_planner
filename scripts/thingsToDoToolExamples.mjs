@@ -1,4 +1,4 @@
-import { lookupMockThingsToDo } from "../.tmp/things-to-do-build/thingsToDo/thingsToDoTool.js";
+import { lookupMockThingsToDo } from "../.tmp/things-to-do-build/src/tools/thingsToDo/thingsToDoTool.js";
 
 const exampleRequests = [
   {

@@ -3,7 +3,7 @@ import {
   MOCK_WEATHER_CITIES,
   MOCK_WEATHER_DATA,
   lookupMockWeather,
-} from "../.tmp/weather-build/weather/index.js";
+} from "../.tmp/weather-build/src/tools/weather/index.js";
 
 test("mock data covers 10 cities for the two-month window", () => {
   assert.equal(MOCK_WEATHER_CITIES.length, 10);

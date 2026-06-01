@@ -1,4 +1,4 @@
-import { lookupMockLodging } from "../.tmp/lodging-build/lodging/lodgingTool.js";
+import { lookupMockLodging } from "../.tmp/lodging-build/src/tools/lodging/lodgingTool.js";
 
 const exampleRequests = [
   {

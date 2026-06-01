@@ -3,7 +3,7 @@ import {
   MOCK_THINGS_TO_DO_ACTIVITIES,
   MOCK_THINGS_TO_DO_CITIES,
   lookupMockThingsToDo,
-} from "../.tmp/things-to-do-build/thingsToDo/index.js";
+} from "../.tmp/things-to-do-build/src/tools/thingsToDo/index.js";
 
 test("mock data covers 10 cities with six activities each", () => {
   assert.equal(MOCK_THINGS_TO_DO_CITIES.length, 10);

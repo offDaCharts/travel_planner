@@ -1,0 +1,294 @@
+:root {
+  color: #1f2528;
+  background: #f5f7f2;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  width: min(1180px, calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 28px 0 48px;
+}
+
+.planner-panel,
+.result-section,
+.trace-panel,
+.empty-state,
+.loading-state,
+.error-banner {
+  border: 1px solid #d7ded2;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.planner-panel {
+  padding: 24px;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: #657069;
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+}
+
+h2 {
+  font-size: 1.35rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+}
+
+h4 {
+  margin-bottom: 8px;
+  color: #4a554d;
+  font-size: 0.88rem;
+}
+
+.mode-pill,
+.warnings span {
+  border-radius: 999px;
+  background: #e8f0df;
+  color: #31412f;
+  padding: 6px 10px;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.prompt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.prompt-chip {
+  min-height: 56px;
+  border: 1px solid #d7ded2;
+  border-radius: 8px;
+  background: #f8faf6;
+  color: #28302a;
+  cursor: pointer;
+  padding: 10px 12px;
+  text-align: left;
+  line-height: 1.25;
+}
+
+.prompt-chip:hover {
+  border-color: #95a787;
+  background: #eef5e8;
+}
+
+.request-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: stretch;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid #cbd4c7;
+  border-radius: 8px;
+  padding: 14px;
+  min-height: 116px;
+}
+
+.request-form button {
+  min-width: 116px;
+  border: 0;
+  border-radius: 8px;
+  background: #254f45;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+.request-form button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.results-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+  margin-top: 16px;
+  align-items: start;
+}
+
+.trace-panel,
+.result-section,
+.empty-state,
+.loading-state,
+.error-banner {
+  padding: 18px;
+}
+
+.trace-panel {
+  position: sticky;
+  top: 16px;
+}
+
+.trace-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 12px;
+  font-size: 0.9rem;
+}
+
+.trace-grid span,
+.muted {
+  color: #657069;
+}
+
+.tool-calls {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.tool-call {
+  display: grid;
+  gap: 2px;
+  border-top: 1px solid #edf0ea;
+  padding-top: 8px;
+}
+
+.tool-call span {
+  color: #657069;
+  font-size: 0.78rem;
+}
+
+.tool-call em {
+  color: #8a5a1f;
+  font-size: 0.78rem;
+  font-style: normal;
+}
+
+.comparison-grid,
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.stack {
+  display: grid;
+  gap: 12px;
+}
+
+.destination-card,
+.plan-card {
+  border: 1px solid #dfe5db;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fbfcfa;
+}
+
+ul {
+  margin: 0 0 16px;
+  padding-left: 18px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+li span {
+  color: #657069;
+  font-size: 0.82rem;
+}
+
+.warnings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.empty-state,
+.loading-state,
+.error-banner {
+  margin-top: 16px;
+}
+
+.error-banner {
+  border-color: #e6b7ad;
+  background: #fff4f1;
+  color: #7a2e1f;
+}
+
+.loading-state {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.loader {
+  width: 18px;
+  height: 18px;
+  border: 3px solid #d7ded2;
+  border-top-color: #254f45;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 820px) {
+  .request-form,
+  .results-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .request-form button {
+    min-height: 48px;
+  }
+
+  .trace-panel {
+    position: static;
+  }
+}
