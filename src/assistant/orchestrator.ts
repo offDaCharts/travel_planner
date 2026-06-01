@@ -16,6 +16,18 @@ import type {
 
 export async function runTravelAssistant(request: string): Promise<AssistantResponse> {
   const parsed = await parseIntent(request);
+  return buildAssistantResponse(parsed);
+}
+
+export async function runTravelAssistantWithProvider(
+  request: string,
+  provider: NlpProvider,
+): Promise<AssistantResponse> {
+  const intent = normalizeIntent(await provider.parse(request), request);
+  return buildAssistantResponse({ provider: provider.name, intent });
+}
+
+function buildAssistantResponse(parsed: ParsedIntentResult): AssistantResponse {
   const evaluations: DestinationEvaluation[] = [];
   const trace: ToolCallTrace[] = [];
 
@@ -147,7 +159,9 @@ function traceFor(
     tool,
     city,
     status: "success",
-    warnings: warnings?.map((warning) => warning.code),
+    warnings: warnings
+      ?.map((warning) => warning.code)
+      .filter((code) => code !== "PARTIAL_DATA"),
   };
 }
 
@@ -238,7 +252,9 @@ function collectWarnings(evaluation: DestinationEvaluation): string[] {
     ...(evaluation.weather?.warnings ?? []),
     ...(evaluation.lodging?.warnings ?? []),
     ...(evaluation.thingsToDo?.warnings ?? []),
-  ].map((warning) => warning.message);
+  ]
+    .filter((warning) => warning.code !== "PARTIAL_DATA")
+    .map((warning) => warning.message);
 
   return warnings.length > 0 ? warnings : ["No major tool warnings."];
 }
