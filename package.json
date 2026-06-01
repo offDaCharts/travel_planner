@@ -7,9 +7,11 @@
     "typecheck": "tsc --noEmit",
     "weather:examples": "rm -rf .tmp/weather-build && tsc --noEmit false --outDir .tmp/weather-build && node scripts/weatherToolExamples.mjs",
     "lodging:examples": "rm -rf .tmp/lodging-build && tsc --noEmit false --outDir .tmp/lodging-build && node scripts/lodgingToolExamples.mjs",
+    "things-to-do:examples": "rm -rf .tmp/things-to-do-build && tsc --noEmit false --outDir .tmp/things-to-do-build && node scripts/thingsToDoToolExamples.mjs",
     "test:weather": "rm -rf .tmp/weather-build && tsc --noEmit false --outDir .tmp/weather-build && node tests/weatherTool.test.mjs",
     "test:lodging": "rm -rf .tmp/lodging-build && tsc --noEmit false --outDir .tmp/lodging-build && node tests/lodgingTool.test.mjs",
-    "test": "npm run test:weather && npm run test:lodging"
+    "test:things-to-do": "rm -rf .tmp/things-to-do-build && tsc --noEmit false --outDir .tmp/things-to-do-build && node tests/thingsToDoTool.test.mjs",
+    "test": "npm run test:weather && npm run test:lodging && npm run test:things-to-do"
   },
   "devDependencies": {}
 }
