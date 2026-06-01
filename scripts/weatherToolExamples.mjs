@@ -1,4 +1,4 @@
-import { lookupMockWeather } from "../.tmp/weather-build/weatherTool.js";
+import { lookupMockWeather } from "../.tmp/weather-build/weather/weatherTool.js";
 
 const exampleRequests = [
   {
