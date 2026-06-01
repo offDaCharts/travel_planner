@@ -1,0 +1,12 @@
+{
+  "name": "travel-planner",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "weather:examples": "rm -rf .tmp/weather-build && tsc --noEmit false --outDir .tmp/weather-build && node scripts/weatherToolExamples.mjs",
+    "test": "rm -rf .tmp/weather-build && tsc --noEmit false --outDir .tmp/weather-build && node tests/weatherTool.test.mjs"
+  },
+  "devDependencies": {}
+}
